@@ -5,8 +5,7 @@ CREATE TABLE Department (
     DepartmentName VARCHAR(100)
 );
 
-INSERT INTO Department (DepartmentID, DepartmentName)
-VALUES
+INSERT INTO Department VALUES
 (10, 'Computer Science'),
 (20, 'Mathematics'),
 (30, 'Physics');
@@ -17,8 +16,7 @@ CREATE TABLE Student (
     DepartmentID INT
 );
 
-INSERT INTO Student (StudentID, StudentName, DepartmentID)
-VALUES
+INSERT INTO Student VALUES
 (1001, 'Arun', 10),
 (1002, 'Priya', 20),
 (1003, 'Kumar', 10),
@@ -30,11 +28,27 @@ CREATE TABLE Faculty (
     DepartmentID INT
 );
 
-INSERT INTO Faculty (FacultyID, FacultyName, DepartmentID)
-VALUES
+INSERT INTO Faculty VALUES
 (501, 'Ravi', 10),
 (502, 'Meena', 20),
 (503, 'Suresh', 30);
 
 CREATE TABLE Course (
-   
+    CourseID INT PRIMARY KEY,
+    CourseName VARCHAR(100),
+    DepartmentID INT
+);
+
+INSERT INTO Course VALUES
+(201, 'Database Systems', 10),
+(202, 'Data Structures', 10),
+(203, 'Mathematics', 20),
+(204, 'Physics', 30);
+
+CREATE TABLE Enrollment (
+    EnrollmentID INT PRIMARY KEY,
+    StudentID INT,
+    CourseID INT
+);
+
+INSERT
